@@ -2,23 +2,27 @@
 
 [`@ibsheet/loader`](https://github.com/ibsheet/loader) starter for react
 
-## clone project
+## Clone Project
 
 ```bash
 git clone https://github.com/ibsheet/loader-react-starter ibl-react-starter
 cd ibl-react-starter
 ```
 
-## setup and start
+## Copy IBSheet Library
 
-#### Using npm:
+copy to: `public/ibsheet`
+
+## Start
+
+### Using npm:
 
 ```
 npm install
 npm start
 ```
 
-#### Using yarn:
+### Using yarn:
 
 ```
 yarn
