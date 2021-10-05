@@ -947,11 +947,12 @@
   dependencies:
     "@hapi/hoek" "^8.3.0"
 
-"@ibsheet/loader@latest":
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/@ibsheet/loader/-/loader-1.1.2.tgz#a2a415350a71a317a0eb38d91df9c6fb79058ece"
-  integrity sha512-EmWPdMaUii7JH+8GQGf5rXCeuqW2tP1qLjxVdOBa0nxbCRGXFW7v8V4J65DPnQjb7b7hs2lKIeAtSyQ9HDsOIQ==
+"@ibsheet/loader@^1.1.2", "@ibsheet/loader@latest":
+  version "1.1.11"
+  resolved "https://registry.yarnpkg.com/@ibsheet/loader/-/loader-1.1.11.tgz#0c2805cafcee301aa45f2e264a78d2ef9fd9f376"
+  integrity sha512-NsbMXyIEkkFgJVsOZG5i437SQ8oTKwggFDBDA2FESquP41EaHhks3Ek2ykdj+VrQCWfCT4cXm2qXqTAPXKMpmg==
   dependencies:
+    "@ibsheet/loader" "^1.1.2"
     is-url "^1.2.4"
     shortid "^2.2.15"
     uuid "^3.3.3"

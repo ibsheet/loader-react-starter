@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 import loader from '@ibsheet/loader'
-import { Home } from './components/home'
-import { Page1 } from './components/page1'
-import { Page2 } from './components/page2'
+import Home from './components/home'
+import Page1 from './components/page1'
+import Page2 from './components/page2'
 import './App.css';
 
 loader.config({
