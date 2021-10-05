@@ -11,7 +11,7 @@ loader.config({
     name: 'ibsheet',
     baseUrl: '/ibsheet'
   }]
-})
+});
 
 const App = () => {
   const loaderVersion = loader.version;
