@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import loader from '@ibsheet/loader'
-import { SheetSampleData } from '../shared/ibsheet-data'
+import loader from '@ibsheet/loader';
+import { SheetSampleData } from '../shared/ibsheet-data';
 
 const Page1 = () => {
   const sheetId = 'sheet';
@@ -16,7 +16,7 @@ const Page1 = () => {
       data
     })
     return () => {
-      loader.removeSheet(sheetId)
+      loader.removeSheet(sheetId);
     };
   }, []);
 

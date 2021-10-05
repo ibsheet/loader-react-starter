@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import loader from '@ibsheet/loader'
+import loader from '@ibsheet/loader';
 import logo from '../logo.svg';
 
 const Home = () => {
