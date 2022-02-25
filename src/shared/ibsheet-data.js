@@ -1,3 +1,14 @@
+import axios from 'axios';
+
+// axios 를 이용한 데이터 로드
+function loadSearchData(evt, append) {
+  axios.get('http://localhost:8000/api/data')
+  .then(res => {
+    evt.sheet.loadSearchData(res.data, append);
+  })
+  .catch(e => console.log(e))
+}
+
 // ibsheet sample data
 export const SheetSampleData = [
   // sheet1
@@ -9,6 +20,7 @@ export const SheetSampleData = [
         sa_position: 'A3', sa_enterdate: '19890317', sa_desc: '' }
     ],
     options: {
+      Cfg: { SearchMode: 0 },
       Def: { Col: { RelWidth: 1 } },
       Cols: [
         { Header: '이름', Name: 'sa_nm', Type: 'Text' },
@@ -23,7 +35,18 @@ export const SheetSampleData = [
         { Header: '입사일', Name: 'sa_enterdate', Type: 'Date',
           Width: 100, Format: 'yyyy/MM/dd' },
         { Header: '비고', Name: 'sa_desc', Type: 'Lines' }
-      ]
+      ],
+      Events: {
+         // SearchMode:0 을 SearchMode: 3 과 같이 동작하도록 핸들링.
+        // 첫 렌더링시 조회
+        onRenderFirstFinish: evt => {
+          loadSearchData(evt);
+        },
+        // 스크롤 마지막시에 data 를 append 하도록 추가.
+        onVScrollEndPoint: evt => {
+          loadSearchData(evt, true);
+        }
+      }
     }
   },
   // sheet2

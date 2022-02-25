@@ -6,6 +6,7 @@ import Page1 from './components/page1'
 import Page2 from './components/page2'
 import './App.css';
 
+// loader 환경설정
 loader.config({
   registry: [{
     name: 'ibsheet',

@@ -9,12 +9,16 @@ const Page2 = () => {
   useEffect(() => {
     const { data, options } = SheetSampleData[1];
 
+    // IBSheet.create 의 인자를 기반으로 생성.
     loader.createSheet({
       id: sheetId,
       el: sheetEl,
       options,
       data
-    })
+    }).then(sheet => {
+      // sheet 객체만 생성된 상태.
+      console.log('created sheet', sheet.id);
+    });
     return () => {
       loader.removeSheet(sheetId);
     };
