@@ -7,14 +7,13 @@ const Page2 = () => {
   const sheetEl = 'sheetContainer';
 
   useEffect(() => {
-    const { data, options } = SheetSampleData[1];
+    const { options } = SheetSampleData[1];
 
     // IBSheet.create 의 인자를 기반으로 생성.
     loader.createSheet({
       id: sheetId,
       el: sheetEl,
-      options,
-      data
+      options
     }).then(sheet => {
       // sheet 객체만 생성된 상태.
       console.log('created sheet', sheet.id);
