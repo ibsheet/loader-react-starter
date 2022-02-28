@@ -32,6 +32,7 @@ export const SheetSampleData = [
       Cols: [
         // STATUS 를 사용하기 위한 IB_Preset 모듈
         { Header: '상태', Name: 'sa_status', Extend: IB_Preset.STATUS },
+        { Header: { Value: '', HeaderCheck: 1, IconAlign: 'Center' }, Type: 'Bool', Name: 'sa_bool' },
         { Header: '이름', Name: 'sa_nm', Type: 'Text' },
         { Header: '사원번호', Name: 'sa_id', Type: 'Text',
         Align: 'center' },
@@ -73,6 +74,7 @@ export const SheetSampleData = [
         CanSort: '0'
       },
       Cols: [
+        { Header: { Value: '', HeaderCheck: 1, IconAlign: 'Center' }, Type: 'Bool', Name: 'sa_bool', Align: 'Center' },
         { Header: '부서명', Type: 'Text', Name: 'sDept' },
         { Header: '팀명', Type: 'Text', Name: 'sTeam' },
         { Header: '직급', Type: 'Text', Name: 'sPosition' },

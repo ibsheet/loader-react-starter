@@ -1,3 +1,4 @@
+// React 용 common.js 전역 모듈을 사용할 수 있도록 함. 사용방법: import { IB_Preset } from 'common.js'
 const IB_Preset = {
   // 날짜 시간 포멧
   'YMD': {
