@@ -7,8 +7,7 @@ const loadSearchData = evt => {
     const param = {
       data: res.data,
       callback: rtn => {
-        const rtnData = JSON.parse(rtn.data);
-        evt.sheet.showMessageTime('<span style=\'color:black\'>조회가 완료되었습니다.<br> 서버모듈 전체 데이터 건수 : ' + rtnData.Total + '</span>', 1500);
+        evt.sheet.showMessageTime('<span style=\'color:black\'>조회가 완료되었습니다.<br> 서버모듈 전체 데이터 건수 : ' + rtn.data.Total + '</span>', 1500);
       }
     };
 
