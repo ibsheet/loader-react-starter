@@ -14,7 +14,10 @@ const Page1 = () => {
       el: sheetEl,
       options,
       data
-    })
+    }).then(sheet => {
+      console.log('created sheet', sheet.id);
+    });
+
     return () => {
       loader.removeSheet(sheetId);
     };
@@ -22,7 +25,7 @@ const Page1 = () => {
 
   return (
     <div>
-      <p>page1 works!</p>
+      <p>SearchMode: 2, 기본 페이지 입니다.</p>
       <div id={ sheetEl }></div>
     </div>
   );
