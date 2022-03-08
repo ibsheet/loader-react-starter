@@ -1,3 +1,6 @@
+import { IB_Preset } from './common.js';
+import loadSearchData from './load-data.js';
+
 // ibsheet sample data
 export const SheetSampleData = [
   // sheet1
@@ -6,10 +9,33 @@ export const SheetSampleData = [
       { sa_nm: '홍길동', sa_id: '9821450', sa_dept: '04',
         sa_position: 'B0', sa_enterdate: '19980305', sa_desc: '' },
       { sa_nm: '김한국', sa_id: '9510427', sa_dept: '01',
-        sa_position: 'A3', sa_enterdate: '19890317', sa_desc: '' }
+        sa_position: 'A3', sa_enterdate: '19890317', sa_desc: '' },
+      { sa_nm: '김수용', sa_id: '9310422', sa_dept: '03',
+        sa_position: 'C5', sa_enterdate: '19900208', sa_desc: '' },
+      { sa_nm: '조문성', sa_id: '9110421', sa_dept: '03',
+        sa_position: 'C5', sa_enterdate: '19960304', sa_desc: '' },
+      { sa_nm: '박진성', sa_id: '9410427', sa_dept: '05',
+        sa_position: 'C5', sa_enterdate: '19550505', sa_desc: '' },
+      { sa_nm: '김응주', sa_id: '9310427', sa_dept: '06',
+        sa_position: 'C5', sa_enterdate: '19440505', sa_desc: '' },
+      { sa_nm: '신요한', sa_id: '9010427', sa_dept: '02',
+        sa_position: 'C5', sa_enterdate: '20000202', sa_desc: '' },
+      { sa_nm: '이미국', sa_id: '9500427', sa_dept: '05',
+        sa_position: 'C5', sa_enterdate: '20000625', sa_desc: '' },
+      { sa_nm: '조자룡', sa_id: '9500327', sa_dept: '06',
+        sa_position: 'C6', sa_enterdate: '19890320', sa_desc: '' },
+      { sa_nm: '도유미', sa_id: '9500227', sa_dept: '05',
+        sa_position: 'C6', sa_enterdate: '19890331', sa_desc: '' },
+      { sa_nm: '국간장', sa_id: '9510127', sa_dept: '06',
+        sa_position: 'C6', sa_enterdate: '19890222', sa_desc: '' },
     ],
     options: {
-      Def: { Col: { RelWidth: 1 } },
+      Def: {
+        Col: { RelWidth: 1 }
+      },
+      Cfg: {
+        CanSort: '0'
+      },
       Cols: [
         { Header: '이름', Name: 'sa_nm', Type: 'Text' },
         { Header: '사원번호', Name: 'sa_id', Type: 'Text',
@@ -20,10 +46,10 @@ export const SheetSampleData = [
         { Header: '직급', Name: 'sa_position', Type: 'Enum',
           Enum: '|대표|상무|이사|부장|차장|과장|대리|사원',
           EnumKeys: '|A1|A2|A3|B0|B1|C4|C5|C6' },
-        { Header: '입사일', Name: 'sa_enterdate', Type: 'Date',
-          Width: 100, Format: 'yyyy/MM/dd' },
+        { Header: '입사일', Name: 'sa_enterdate', Extend: IB_Preset.YMD },
         { Header: '비고', Name: 'sa_desc', Type: 'Lines' }
-      ]
+      ],
+      Events: {}
     }
   },
   // sheet2
@@ -52,11 +78,10 @@ export const SheetSampleData = [
           Width: '130', Align: 'Right' },
         { Header: '근속기간(년)', Type: 'Int',
           Name: 'sPeriod', Align: 'Right' },
-        { Header: '급여', Type: 'Int', Name: 'sSalary',
-          Align: 'Right', Format: '#,###' },
-        { Header: '상여', Type: 'Int', Name: 'sBonus',
-          Align: 'Right', Format: '#,###' }
-      ]
+        { Header: '급여', Name: 'sSalary', Extend: IB_Preset.NullInteger },
+        { Header: '상여', Name: 'sBonus', Extend: IB_Preset.NullInteger }
+      ],
+      Events: {}
     },
     data: [
       { sDept: 'CEO', sTeam: '임원', sPosition: '대표이사', sName: '황정열',
@@ -180,5 +205,31 @@ export const SheetSampleData = [
         sGender: '女', sAgeRange: '20대', sAddr: '경기', sAge: 23, sPeriod: 1,
         sSalary: 1800800, sBonus: 180080 }
     ]
+  },
+  {
+    options: {
+      Def: {
+        Col: { RelWidth: '1' }
+      },
+      Cfg: {
+        SearchMode: 0,
+        HeaderMerge: 3,
+        DataMerge: 0
+      },
+      Cols: [
+        { Header: ["신청인","신청인"],"Type": "Text","MinWidth": 100,"Name": "sName","ColMerge": 1 },
+        { Header: ["선택","선택"],"Type": "Bool","MinWidth": 100,"Name": "check","ColMerge": 1 },
+        { Header: ["신청사유","신청사유"],"Type": "Enum","MinWidth": 100,"Name": "Reason","ColMerge": 0,"Align": "Center","Enum": "|야근|주말특근|휴일특근", "EnumKeys": "|01|02|03" },
+        { Header: ["신청금액","신청금액"],"Type": "Int","MinWidth": 100,"Name": "Qty","ColMerge": 1,"Required": 1 },
+        { Header: ['근태기간', '시작일'], Name: 'Date1', Extend: IB_Preset.YMD },
+        { Header: ['근태기간', '종료일'], Name: 'Date2', Extend: IB_Preset.YMD },
+        { Header: ['시간', '시작'], Name: 'Time1', Extend: IB_Preset.HM },
+        { Header: ['시간', '종료'], Name: 'Time2', Extend: IB_Preset.HM },
+        { Header: ['rDate', 'rDate'], Name: 'rDate', Extend: IB_Preset.YMD, Visible: 0 },
+      ],
+      Events: {
+        onRenderFirstFinish: evt => loadSearchData(evt)
+      }
+    }
   }
-]
+];

@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@ibsheet/loader": "latest",
+    "@ibsheet/loader": "^1.1.14",
+    "axios": "^0.26.0",
+    "cors": "^2.8.5",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-router-dom": "^5.1.2",
