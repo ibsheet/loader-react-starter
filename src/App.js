@@ -10,7 +10,8 @@ import './App.css';
 loader.config({
   registry: [{
     name: 'ibsheet',
-    baseUrl: '/ibsheet'
+    baseUrl: '/ibsheet',
+    plugins: ['common', 'dialog', 'excel']
   }]
 });
 
