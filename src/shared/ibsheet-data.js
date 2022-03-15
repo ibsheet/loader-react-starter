@@ -59,6 +59,7 @@ export const SheetSampleData = [
         Col: { Align: 'Left', RelWidth: '1' }
       },
       Cfg: {
+        SearchMode: 0,
         CanSort: '0'
       },
       Cols: [
