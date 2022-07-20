@@ -15,6 +15,10 @@ loader.config({
   }]
 });
 
+loader.once('loaded', evt => {
+  console.log('loaded start:', evt)
+})
+
 const App = () => {
   const loaderVersion = loader.version;
 

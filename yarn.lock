@@ -1256,7 +1256,17 @@
   dependencies:
     "@hapi/hoek" "^8.3.0"
 
-"@ibsheet/loader@^1.1.14", "@ibsheet/loader@^1.1.2":
+"@ibsheet/loader@^1.1.18":
+  version "1.1.18"
+  resolved "https://registry.yarnpkg.com/@ibsheet/loader/-/loader-1.1.18.tgz#2dff1bb336fa5961a1a2616d77c32ade84b3f52a"
+  integrity sha512-rqCmafKbfAR6jN3+1Vw2g+0RomA6Ru9g/U1KZ9IFDhHD5bundFW6OqqCKi5s0tYznMAVRBeIytwwyvyiFzFAEg==
+  dependencies:
+    "@ibsheet/loader" "^1.1.2"
+    is-url "^1.2.4"
+    shortid "^2.2.15"
+    uuid "^3.3.3"
+
+"@ibsheet/loader@^1.1.2":
   version "1.1.14"
   resolved "https://registry.yarnpkg.com/@ibsheet/loader/-/loader-1.1.14.tgz#c96edc040f2ba01cd1d8a4fd5243a58f518976aa"
   integrity sha512-XOTsHNcKQgNTvG6z1dXC8j4Ufq2hoICwfV5fx2uLKIV8ugD0UkNiVP31Ll2SM7ZqHJyTL6Kqo1QvDkP3F7n6ow==
