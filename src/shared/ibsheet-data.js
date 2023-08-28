@@ -1,5 +1,5 @@
 import { IB_Preset } from './common.js';
-import loadSearchData from './load-data.js';
+
 
 // ibsheet sample data
 export const SheetSampleData = [
@@ -229,7 +229,6 @@ export const SheetSampleData = [
         { Header: ['rDate', 'rDate'], Name: 'rDate', Extend: IB_Preset.YMD, Visible: 0 },
       ],
       Events: {
-        onRenderFirstFinish: evt => loadSearchData(evt)
       }
     }
   }
