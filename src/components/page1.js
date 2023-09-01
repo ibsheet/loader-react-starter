@@ -1,13 +1,13 @@
-import React, { useEffect } from 'react';
-import loader from '@ibsheet/loader';
-import { SheetSampleData } from '../shared/ibsheet-data';
+import React, { useEffect } from 'react'
+import loader from '@ibsheet/loader'
+import { SheetSampleData } from '../shared/ibsheet-data'
 
 const Page1 = () => {
-  let sheetId = '';
-  const sheetEl = 'sheetContainer';
+  let sheetId = ''
+  const sheetEl = 'sheetContainer'
 
   useEffect(() => {
-    const { data, options } = SheetSampleData[0];
+    const { data, options } = SheetSampleData[0]
 
     loader.createSheet({
       el: sheetEl,
@@ -18,18 +18,17 @@ const Page1 = () => {
       sheetId = sheet.id;
       console.log('created sheet', sheet.id);
     });
-
     return () => {
-      loader.removeSheet(sheetId);
-    };
-  }, []);
+      loader.removeSheet(sheetId)
+    }
+  }, [])
 
   return (
     <div>
-      <p>SearchMode: 2, 기본 페이지 입니다.</p>
+      <p>page1 works!</p>
       <div id={ sheetEl }></div>
     </div>
-  );
+  )
 }
 
-export default Page1;
+export default Page1
