@@ -2,12 +2,13 @@ import React, { useEffect } from 'react';
 import loader from '@ibsheet/loader';
 import { SheetSampleData } from '../shared/ibsheet-data';
 
-const Page3 = () => {
-  let sheetId = '';
-  const sheetEl = 'sheetContainer';
+let sheetId = '';
+const sheetEl = 'sheetContainer';
+
+function Page2() {
 
   useEffect(() => {
-    const { data, options } = SheetSampleData[2];
+    const { data, options } = SheetSampleData[1];
 
     loader.createSheet({
       el: sheetEl,
@@ -25,11 +26,14 @@ const Page3 = () => {
   }, []);
 
   return (
-    <div>
-      <p>React, axios 를 사용하여 데이터를 조회하는 샘플입니다. (<b>src/api/app.js</b> 를 실행시켜주세요.)</p>
-      <div id={ sheetEl }></div>
-    </div>
-  );
+    <>
+      <div>
+        <p>SearchMode: 0, 기본 페이지입니다.</p>
+        <div id={ sheetEl }></div>
+      </div>
+    </>
+  )
+
 }
 
-export default Page3;
+export default Page2

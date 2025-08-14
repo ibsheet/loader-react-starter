@@ -1,5 +1,5 @@
 import { IB_Preset } from './common.js';
-import loadSearchData from './load-data.js';
+// import loadSearchData from './load-data.js';
 
 // ibsheet sample data
 export const SheetSampleData = [
@@ -206,31 +206,5 @@ export const SheetSampleData = [
         sGender: '女', sAgeRange: '20대', sAddr: '경기', sAge: 23, sPeriod: 1,
         sSalary: 1800800, sBonus: 180080 }
     ]
-  },
-  {
-    options: {
-      Def: {
-        Col: { RelWidth: '1' }
-      },
-      Cfg: {
-        SearchMode: 0,
-        HeaderMerge: 3,
-        DataMerge: 0
-      },
-      Cols: [
-        { Header: ["신청인","신청인"],"Type": "Text","MinWidth": 100,"Name": "sName","ColMerge": 1 },
-        { Header: ["선택","선택"],"Type": "Bool","MinWidth": 100,"Name": "check","ColMerge": 1 },
-        { Header: ["신청사유","신청사유"],"Type": "Enum","MinWidth": 100,"Name": "Reason","ColMerge": 0,"Align": "Center","Enum": "|야근|주말특근|휴일특근", "EnumKeys": "|01|02|03" },
-        { Header: ["신청금액","신청금액"],"Type": "Int","MinWidth": 100,"Name": "Qty","ColMerge": 1,"Required": 1 },
-        { Header: ['근태기간', '시작일'], Name: 'Date1', Extend: IB_Preset.YMD },
-        { Header: ['근태기간', '종료일'], Name: 'Date2', Extend: IB_Preset.YMD },
-        { Header: ['시간', '시작'], Name: 'Time1', Extend: IB_Preset.HM },
-        { Header: ['시간', '종료'], Name: 'Time2', Extend: IB_Preset.HM },
-        { Header: ['rDate', 'rDate'], Name: 'rDate', Extend: IB_Preset.YMD, Visible: 0 },
-      ],
-      Events: {
-        onRenderFirstFinish: evt => loadSearchData(evt)
-      }
-    }
   }
 ];
